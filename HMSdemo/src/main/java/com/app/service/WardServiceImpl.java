@@ -8,12 +8,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.app.Repository.WardRepository;
+import com.app.dto.PatientResponseDto;
 import com.app.dto.WardRequestDto;
 import com.app.dto.WardResponseDto;
+import com.app.entities.Patient;
 import com.app.entities.Ward;
 import com.app.entities.WardType;
 import com.app.exception_handler.ResourceNotFoundException;
 import static com.app.dto.WardResponseDto.createWardList;
+
+import static com.app.dto.PatientResponseDto.createPatient;
 
 @Service
 @Transactional
@@ -73,6 +77,17 @@ public class WardServiceImpl implements WardService {
 		
 		Ward w = repo.findByType(type).orElseThrow(()-> new ResourceNotFoundException("Invalid ward type"));
 		return w;
+	}
+
+	@Override
+	public List<PatientResponseDto> getAllPatients(Integer wardId) {
+		// TODO Auto-generated method stub
+		
+		Ward w = repo.findById(wardId).orElseThrow(()-> new ResourceNotFoundException("invalid ward id"));
+		
+		List<Patient> list = w.getPatients();
+		
+		return createPatient(list);
 	}
 
 }

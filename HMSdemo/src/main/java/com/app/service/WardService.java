@@ -2,6 +2,7 @@ package com.app.service;
 
 import java.util.List;
 
+import com.app.dto.PatientResponseDto;
 import com.app.dto.WardRequestDto;
 import com.app.dto.WardResponseDto;
 import com.app.entities.Ward;
@@ -20,4 +21,6 @@ public interface WardService {
 	Ward getWardByType(WardType type);
 	
 	String updateWard(Integer wardId,WardRequestDto wd);
+	
+	List<PatientResponseDto> getAllPatients(Integer wardId);
 }

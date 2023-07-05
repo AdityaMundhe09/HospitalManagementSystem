@@ -54,49 +54,23 @@ public class PatientServiceImpl implements PatientService {
 		
 		User u = userService.addUser(mapper.map(pt, UserDto.class));
 		
-		
-		
 		Patient p = mapper.map(pt, Patient.class);
-		
-	
-		
-//		Doctor d =mapper.map(doctorService.getDoctorById(pt.getDoctorId()),Doctor.class);
 		
 		Doctor d = doctorRepo.findById(pt.getDoctorId()).orElseThrow(()-> new ResourceNotFoundException("invalid doctor id"));
 		
-		
-		
-//		Ward w =mapper.map(wardService.getWardById(pt.getWardId()),Ward.class);
-		
 		Ward w = wardRepo.findById(pt.getWardId()).orElseThrow(()-> new ResourceNotFoundException("invalid doctor id"));
-		
-	
 		
 		p.setUser(u);
 		
-		
-		
 		p.setWard(w);
-		
-		
 		
 		p.addDoctor(d);
 		
-		
-		
 		p = repo.save(p);
-		
-		
 		
 		d.addPatient(p);
 	
-		
 		w.addPatient(p);
-		
-		
-		
-
-		
 		
 		return "Patient added successfully with Id:"+p.getPatientId();
 	}
@@ -174,6 +148,21 @@ public class PatientServiceImpl implements PatientService {
 		
 		
 		return createDoctorsList(p.getDoctors());
+	}
+
+	@Override
+	public String assignDoctor(Integer patientId, Integer doctorId) {
+		// TODO Auto-generated method stub
+		
+		Patient p = repo.findById(patientId).orElseThrow(()->new ResourceNotFoundException("invalid patient id"));
+		
+		Doctor d = doctorRepo.findById(doctorId).orElseThrow(()-> new ResourceNotFoundException("invalid doctor id"));
+		
+		p.addDoctor(d);
+		
+		d.addPatient(p);
+		
+		return "Doctor with DoctorID:"+d.getDoctorId()+" has been successfully assigned to Patient with patientId:"+p.getPatientId();
 	}
 
 }

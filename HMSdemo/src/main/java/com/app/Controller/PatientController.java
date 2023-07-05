@@ -52,4 +52,11 @@ public class PatientController {
 	public ResponseEntity<?> getAllDoctors(@PathVariable Integer patientId){
 		return new ResponseEntity<>(service.getAllDoctors(patientId), HttpStatus.OK);
 	}
+	
+	@PutMapping("/patient/{patientId}/doctor/{doctorId}")
+	public ResponseEntity<?> assignDoctor(@PathVariable Integer patientId,@PathVariable Integer doctorId){
+		return new ResponseEntity<>(new ApiResponse(service.assignDoctor(patientId, doctorId)), HttpStatus.OK);
+	}
+	
+	
 }
