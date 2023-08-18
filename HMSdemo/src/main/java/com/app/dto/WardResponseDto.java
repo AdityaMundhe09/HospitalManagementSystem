@@ -40,6 +40,8 @@ public class WardResponseDto {
 			wr.setCharges(w.getCharges());
 			wr.setAvailability(w.getAvailability());
 			wr.setMaxCapacity(w.getMaxCapacity());
+			
+			list.add(wr);
 		}
 		
 		return list;
