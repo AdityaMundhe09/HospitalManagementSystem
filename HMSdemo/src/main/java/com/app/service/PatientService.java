@@ -3,6 +3,7 @@ package com.app.service;
 import java.util.List;
 
 import com.app.dto.DoctorResponseDto;
+import com.app.dto.PatientEditDto;
 import com.app.dto.PatientRequestDto;
 import com.app.dto.PatientResponseDto;
 import com.app.entities.Patient;
@@ -20,7 +21,7 @@ public interface PatientService {
 	String removePatient(Integer patientId);
 	
 	
-	String updatePatient(Integer patientId,PatientRequestDto pt);
+	String updatePatient(Integer patientId,PatientEditDto pt);
 	
 	List<DoctorResponseDto> getAllDoctors(Integer patientId);
 	

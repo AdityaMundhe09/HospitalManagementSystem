@@ -11,6 +11,7 @@ import com.app.Repository.DoctorRepository;
 import com.app.Repository.PatientRepository;
 import com.app.Repository.WardRepository;
 import com.app.dto.DoctorResponseDto;
+import com.app.dto.PatientEditDto;
 import com.app.dto.PatientRequestDto;
 import com.app.dto.PatientResponseDto;
 import com.app.dto.UserDto;
@@ -118,7 +119,7 @@ public class PatientServiceImpl implements PatientService {
 	}
 
 	@Override
-	public String updatePatient(Integer patientId, PatientRequestDto pt) {
+	public String updatePatient(Integer patientId, PatientEditDto pt) {
 		// TODO Auto-generated method stub
 		
 		

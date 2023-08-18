@@ -1,5 +1,7 @@
 package com.app.Controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.dto.ApiResponse;
+import com.app.dto.PatientEditDto;
 import com.app.dto.PatientRequestDto;
 import com.app.service.PatientService;
 
@@ -24,7 +27,7 @@ public class PatientController {
 	private PatientService service;
 	
 	@PostMapping
-	public ResponseEntity<?> addNewPatient(@RequestBody PatientRequestDto pt){
+	public ResponseEntity<?> addNewPatient(@RequestBody @Valid PatientRequestDto pt){
 		return new ResponseEntity<>(new ApiResponse(service.addPatient(pt)), HttpStatus.CREATED);
 	}
 	
@@ -39,7 +42,7 @@ public class PatientController {
 	}
 	
 	@PutMapping("/{patientId}")
-	public ResponseEntity<?> updatePatient(@PathVariable Integer Id,@RequestBody PatientRequestDto pt){
+	public ResponseEntity<?> updatePatient(@PathVariable Integer Id,@RequestBody PatientEditDto pt){
 		return new ResponseEntity<>(new ApiResponse(service.updatePatient(Id, pt)), HttpStatus.OK);
 	}
 	

@@ -21,7 +21,11 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.ToString.Exclude;
 
-@Entity @Table(name = "wards")@Getter@Setter@NoArgsConstructor@AllArgsConstructor@ToString
+@Entity @Table(name = "wards")@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Ward {
 	@Id@GeneratedValue(strategy =GenerationType.IDENTITY )
 	private int wardId;

@@ -1,5 +1,7 @@
 package com.app.Controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +27,7 @@ public class DoctorController {
 	
 	
 	@PostMapping
-	public ResponseEntity<?> addNewDoctor(@RequestBody DoctorRequestDto dr){
+	public ResponseEntity<?> addNewDoctor(@RequestBody @Valid DoctorRequestDto dr){
 		return new ResponseEntity<>(new ApiResponse(service.addDoctor(dr)),HttpStatus.CREATED);
 	}
 	

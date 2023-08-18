@@ -1,5 +1,7 @@
 package com.app.Controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +34,7 @@ public class EmployeeController {
 	
 	
 	@PostMapping
-	public ResponseEntity<?> addEmployee(@RequestBody EmployeeRequestDto emp){
+	public ResponseEntity<?> addEmployee(@RequestBody @Valid EmployeeRequestDto emp){
 		Employee e = service.addNewEmployee(emp);
 		return new ResponseEntity<>(new ApiResponse("Emplyoee with ID:"+e.getEmpId()+" added successfully"), HttpStatus.CREATED);
 	}

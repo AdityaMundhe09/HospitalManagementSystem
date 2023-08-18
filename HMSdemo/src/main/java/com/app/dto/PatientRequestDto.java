@@ -2,6 +2,10 @@ package com.app.dto;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Past;
+
 import com.app.entities.BloodGroup;
 import com.app.entities.Gender;
 import com.app.entities.PaymentStatus;
@@ -19,16 +23,31 @@ import lombok.Setter;
 @NoArgsConstructor
 public class PatientRequestDto {
 
+	@NotBlank(message = "first name should not be null")
 	private String firstName;
+	
+	@NotBlank(message = "last name should not be null")
 	private String lastName;
+	
+	@NotBlank(message = "email should not be null")
+	@Email(message = "email not valid")
 	private String email;
+	
+	@NotBlank(message = "password should not be null")
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private String password;
+	
+	@NotBlank(message = "confirm password should not be null")
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private String confirmPassword;
+	
+	
 	private Role role;
+	
+	@Past
 	private LocalDate dob;
 	private Gender gender;
+	
 	private double contactNo;
 	private LocalDate dateOfAdmission;
 	private BloodGroup bloodGroup;
