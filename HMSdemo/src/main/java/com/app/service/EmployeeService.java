@@ -2,6 +2,7 @@ package com.app.service;
 
 import java.util.List;
 
+import com.app.dto.EmployeeEditDto;
 import com.app.dto.EmployeeRequestDto;
 import com.app.dto.EmployeeResponseDto;
 import com.app.entities.Employee;
@@ -18,5 +19,5 @@ public interface EmployeeService {
 	
 	List<EmployeeResponseDto> displayEmployees();
 
-	String updateEmployee(Integer empId,EmployeeRequestDto emp);
+	String updateEmployee(Integer empId,EmployeeEditDto emp);
 }

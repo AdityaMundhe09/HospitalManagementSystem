@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.dto.ApiResponse;
+import com.app.dto.EmployeeEditDto;
 import com.app.dto.EmployeeRequestDto;
 import com.app.entities.Employee;
 import com.app.service.EmployeeService;
@@ -55,7 +56,7 @@ public class EmployeeController {
 	}
 	
 	@PutMapping("/{empId}")
-	public ResponseEntity<?> updateEmployee(@PathVariable Integer empId,@RequestBody EmployeeRequestDto emp){
+	public ResponseEntity<?> updateEmployee(@PathVariable Integer empId,@RequestBody EmployeeEditDto emp){
 		return new ResponseEntity<>(new ApiResponse(service.updateEmployee(empId, emp)), HttpStatus.OK);
 	}
 	

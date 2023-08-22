@@ -34,4 +34,25 @@ public class UserServiceImpl implements UserService {
 		return repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("User Not Found"));
 	}
 
+	@Override
+	public UserDto getUserByEmailAndPassword(String email, String password) {
+		// TODO Auto-generated method stub
+		
+		User u = repo.findByEmailAndPassword(email, password).orElseThrow(()-> new ResourceNotFoundException("User Not Found"));
+		
+		
+		return mapper.map(u, UserDto.class);
+	}
+
+	@Override
+	public String updatePassword(Integer id,String password) {
+		// TODO Auto-generated method stub
+		
+		User u = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("User Not Found"));
+		
+		u.setPassword(password);
+		
+		return "password changed successfully";
+	}
+
 }

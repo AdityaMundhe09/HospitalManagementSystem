@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.app.Repository.EmployeeRepository;
+import com.app.dto.EmployeeEditDto;
 import com.app.dto.EmployeeRequestDto;
 import com.app.dto.EmployeeResponseDto;
 import com.app.dto.UserDto;
@@ -79,7 +80,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public String updateEmployee(Integer empId,EmployeeRequestDto emp) {
+	public String updateEmployee(Integer empId,EmployeeEditDto emp) {
 		// TODO Auto-generated method stub
 		
 		Employee e = repo.findById(empId).orElseThrow();
@@ -88,13 +89,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 		e.setSalary(emp.getSalary());
 		e.getUser().setFirstName(emp.getFirstName());
 		e.getUser().setLastName(emp.getLastName());
-		e.getUser().setEmail(emp.getEmail());
-		e.getUser().setPassword(emp.getPassword());
-		e.getUser().setConfirmPassword(emp.getConfirmPassword());
+//		e.getUser().setEmail(emp.getEmail());
+//		e.getUser().setPassword(emp.getPassword());
+//		e.getUser().setConfirmPassword(emp.getConfirmPassword());
 		e.getUser().setContactNo(emp.getContactNo());
 		e.getUser().setDob(emp.getDob());
 		e.getUser().setGender(emp.getGender());
-		e.getUser().setRole(emp.getRole());
+//		e.getUser().setRole(emp.getRole());
 		
 		return "employee with empId: "+ e.getEmpId()+" updated successfully" ;
 		
