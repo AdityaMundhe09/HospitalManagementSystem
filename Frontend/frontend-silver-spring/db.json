@@ -1,0 +1,219 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "patientviewdetails": [
+    {
+      "id": 1,
+      "firstName": "Hrushi",
+      "email": "hrushi@gmail.com",
+      "lastName": "Zade",
+      "payStatus": "Not_Applicable",
+      "Date_Of_Admission": "23-12-2021",
+      "BloodGr": "o+",
+      "DOB": "23-06-1989",
+      "symptoms": [
+        "vomiting",
+        "stomach Pain"
+      ],
+      "prescription": [
+        "paracetamol",
+        "dolo",
+        "disprin"
+      ],
+      "Doct_Alloted": "vijay dhakan",
+      "ward_id": "a",
+      "Bed_Alloted": 23,
+      "paymentStatus": "paid",
+      "phone_no": 8806800582
+    }
+  ],
+  "patientdetails": [
+    {
+      "id": 1,
+      "firstName": "Hrushi",
+      "email": "hrushi@gmail.com",
+      "lastName": "Zade",
+      "payStatus": "Not_Applicable",
+      "Date_Of_Admission": "23-12-2021",
+      "BloodGr": "o+",
+      "DOB": "23-06-1989",
+      "patientProblems": [
+        {
+          "disease": "corona"
+        }
+      ],
+      "Doct_Alloted": "vijay dhakan",
+      "ward_id": "a",
+      "Bed_Alloted": 23,
+      "paymentStatus": "paid",
+      "phone_no": 8806800582
+    },
+    {
+      "firstName": "rajesh",
+      "lastName": "sharma",
+      "payStatus": "unpaid",
+      "email": "rajesh@gmail.com",
+      "Date_Of_Admission": "2022-05-15",
+      "BloodGr": "o-",
+      "DOB": "2023-06-14",
+      "patientProblems": [
+        {
+          "disease": "coma"
+        }
+      ],
+      "Doct_Alloted": "deverkonda",
+      "ward_id": "c",
+      "Bed_Alloted": 23,
+      "paymentStatus": "",
+      "phone_no": "7410852963",
+      "id": 2
+    },
+    {
+      "id": 18,
+      "firstName": "mayur",
+      "lastName": "zade",
+      "payStatus": "paid",
+      "email": "mayur@gmail.com",
+      "Date_Of_Admission": "2023-06-29",
+      "BloodGr": "A+",
+      "DOB": "2023-06-27",
+      "patientProblems": [
+        {
+          "disease": "serious"
+        }
+      ],
+      "Doct_Alloted": "specialist",
+      "ward_id": "c",
+      "Bed_Alloted": "15",
+      "paymentStatus": "",
+      "phone_no": "8520741963"
+    },
+    {
+      "firstName": "sonam",
+      "lastName": "kapoor",
+      "payStatus": "",
+      "email": "sona@gmail.com",
+      "Date_Of_Admission": "2023-06-29",
+      "BloodGr": "B-",
+      "DOB": "2023-06-06",
+      "patientProblems": "pata nahi",
+      "Doct_Alloted": "Vijaya",
+      "ward_id": "C",
+      "Bed_Alloted": "17",
+      "paymentStatus": "",
+      "phone_no": "8520963147",
+      "id": 19
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "payStatus": "",
+      "email": "",
+      "Date_Of_Admission": "",
+      "BloodGr": "",
+      "DOB": "",
+      "patientProblems": "",
+      "Doct_Alloted": "",
+      "ward_id": "",
+      "Bed_Alloted": "",
+      "paymentStatus": "",
+      "phone_no": "",
+      "id": 20
+    }
+  ],
+  "patients": [
+    {
+      "id": "1",
+      "firstName": "Hrushi",
+      "lastName": "Zade",
+      "payStatus": "Not_Applicable"
+    },
+    {
+      "id": "2",
+      "firstName": "adi",
+      "lastName": "munde",
+      "payStatus": "unpaid"
+    },
+    {
+      "id": "3",
+      "firstName": "leader",
+      "lastName": "unknown",
+      "payStatus": "paid"
+    },
+    {
+      "id": "4",
+      "firstName": "Hrushikesh",
+      "lastName": "Zade",
+      "payStatus": "Not_Applicable"
+    },
+    {
+      "id": "6",
+      "firstName": "rahul",
+      "lastName": "unknown",
+      "payStatus": "paid"
+    },
+    {
+      "id": "7",
+      "firstName": "rohan",
+      "lastName": "Zade",
+      "payStatus": "Not_Applicable"
+    },
+    {
+      "id": "8",
+      "firstName": "shashwat",
+      "lastName": "munde",
+      "payStatus": "unpaid"
+    },
+    {
+      "id": "10",
+      "firstName": "selena",
+      "lastName": "Zade",
+      "payStatus": "Not_Applicable"
+    },
+    {
+      "id": "11",
+      "firstName": "sofia",
+      "lastName": "munde",
+      "payStatus": "unpaid"
+    },
+    {
+      "id": "12",
+      "firstName": "shakira",
+      "lastName": "unknown",
+      "payStatus": "paid"
+    },
+    {
+      "id": "13",
+      "firstName": "taylor",
+      "lastName": "Zade",
+      "payStatus": "Not_Applicable"
+    },
+    {
+      "id": "14",
+      "firstName": "shyam",
+      "lastName": "munde",
+      "payStatus": "unpaid"
+    },
+    {
+      "id": "18",
+      "firstName": "sarika",
+      "lastName": "unknown",
+      "payStatus": "paid"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
